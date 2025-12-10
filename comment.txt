@@ -1,0 +1,85 @@
+=====================================================
+BACKEND
+=====================================================
+- python
+- vs code
+- postman
+- pgadmin : connect PostgreSQL AWS
+- node.js
+-----------------------------
+install framework django
+- cmd : pip install django
+- cmd : pip install djangorestframework
+- cmd : pip install django-cors-headers
+-----------------------------
+tao project tu cmd, vao folder luu source open cmd
+- cmd : django-admin startproject Demo01API
+-> open vscode folder Demo01API
+-----------------------------
+run source
+- terminal : python manage.py runserver
+-----------------------------
+tao SinhVienApp
+- terminal : python manage.py startapp SinhVienApp
+-----------------------------
+config file settings.py
+tai INSTALLED_APPS add them :
+- 'rest_framework', 'corsheaders','SinhVienApp.apps.SinhvienappConfig'
+tai MIDDLEWARE add them :
+- 'corsheaders.middleware.CorsMiddleware'
+add them config : 
+- CORS_ORIGIN_ALLOW_ALL = True
+-----------------------------
+config item tai models.py
+* tao table tu terminal install them : pip install psycopg2
+-----------------------------
+tao database tu PostgreSQL https://console.aws.amazon.com/rds/
+conect aws tu pgadmin
+-----------------------------
+config file settings.py tai DATABASES
+-----------------------------
+migration class
+- terminal : python manage.py makemigrations SinhVienApp
+su dung migration de tao table
+- terminal : python manage.py makemigrations SinhVienApp
+* co the lam nguoc lai bang : python manage.py inspectdb > SinhVienApp/models.py
+-----------------------------
+tao file serializers.py
+-----------------------------
+tao api tai views.py
+tao url tai urls.py tai SinhVienApp
+config lai urls.py tai django
+-----------------------------
+test postman sau khi run  : http://127.0.0.1:8000/khoa
+-----------------------------
+upload file
+config file settings.py add them code xu ly upload file : from pathlib .....
+add them code tai tao views.py :from django.core.files.storage import default_storage ...
+add them code tai urls.py :from django.conf.urls.static import static ...
+===========================================================
+FONTEND
+===========================================================
+Tai folder cung cap API
+- cmd :npm create vite@latest Demo01Ui --template react
+- * Fix error :
+   C:\Users\NHUC TV\AppData\Roaming: tao folder npm-cache va npm
+   set lai link powershell
+     npm config set prefix "C:\Users\NHUC TV\AppData\Roaming\npm"
+     npm config set cache "C:\Users\NHUC TV\AppData\Roaming\npm-cache"
+- cmd : npm run dev
+-----------------------------
+- trang index sau khi build xong : App.jsx
+-----------------------------
+routing and navigation
+- cmd : npm install react-router-dom
+- tao file Home.jsx, Khoa.jsx, SinhVien.jsx trong src
+- tai App.jsx import cac page tren
+-----------------------------
+map api
+- tao file Variables.jsx luu variable
+- Code  Khoa.jsx, SinhVien.jsx  get api
+
+
+	
+
+
